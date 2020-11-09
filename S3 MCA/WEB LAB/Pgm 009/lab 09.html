@@ -1,0 +1,108 @@
+<html>
+   <body >
+   <style type="text/css">
+   
+   .block{
+   		background-color: white;
+  		color: black; 		
+   		display: block;
+   		width: 100%;
+   		padding: 14px 28px;
+   		font-size: 16px;
+   		cursor: pointer;
+   		text-align: center;
+   		transition-duration: 0.4s;
+   		border-radius:8px;
+   
+   }
+   .button1{
+   
+   		border: 2px solid #4CAF50;
+   }
+   .button2{
+   		border: 2px solid #008CBA;
+   
+   }
+   
+   </style>
+   <center>
+       <form>
+       <u>
+        <h4 >Palindrome Check</h4></u>
+        <table cellspacing="10px">
+        <tr>
+        <td>
+        <button onclick="get(this.id);" 
+        id="num"
+        class="block button1">NUMBER</button>
+        
+        </td>
+        
+        <td>
+        <button onclick="get(this.id);" 
+        id="str" class="block button2">STRING</button>
+        </td>
+        </tr>
+       </form>
+       </center>
+       <script type="text/javascript">
+        function get(id)
+        {
+        
+        	if(id==="num")
+        	{
+         	 	var x=prompt("Enter a  Number:");
+          	
+          		if(x!=null)
+          		{
+          			x=Number(x);
+          			if(x===p(x))
+          				alert("Palindrome Number");
+          			else
+          				alert("Not Palindrome Number");
+          		}
+          		else
+          			return;
+          	}
+          	else
+          	{			
+          		var y=prompt("Enter  String:");
+          			if(y!=null){
+         			 if(y===pali(y))
+         			 	alert("Palindrome string");
+         			 else
+         			 	alert("Not Palindrome string");
+         			 	
+         		 	}
+         	 	else
+          			return;
+          	}
+          
+          }	
+          function pali(str) {
+          var newString = "";
+          for (var i = str.length - 1; i >= 0; i--) {
+          newString += str[i];
+          }
+          return newString;
+          }
+          
+          function p(num)
+          {
+          	var rev=0;
+          	
+          	while(num)
+          	{
+          		rev=(rev*10)+(num%10);
+          		num=parseInt(num/10);
+          	//	alert(num);
+          	}
+          	//alert(rev);
+          	return rev;
+          
+          }
+   
+          
+       </script>
+   </body>
+       

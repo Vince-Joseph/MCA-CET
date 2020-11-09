@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Form</title>
+     <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    #warning-msg{
+        display: none;
+    }
+  .required-field::after {
+        content: " *";
+        position: relative;
+        bottom: 5px;
+        color: red;
+    }
+</style>
+</head>
+<body>
+    <div class="container py-4 px-5 my-5 shadow">
+       <div class="row">
+           <div class="col-sm">
+            <h2 class="bg-success text-white p-4 float-right mt-2">
+                Application Form <i class="fa fa-address-card-o"></i>
+            </h2>
+           </div>
+       </div>
+        <div class="row">
+            <div class="col-sm">
+                <h3 class="bg-primary text-white p-2 float-left mt-2">
+                    Basic details <i class="fa fa-user"></i>
+                </h3>
+            </div>
+        </div>
+       <form action="javascript:success();" class="needs-validation">
+             <div class="form-group">
+                <div class="row">       
+                    <div class="col-sm">
+                        
+                        <label for="name" class="required-field">Name:</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <i class="fa fa-user input-group-text pt-3"></i>
+                             </div>
+                            <input type="text" class="form-control form-control-lg" 
+                        id="name" placeholder="Enter name" required>
+                    </div>
+                        
+                        <!-- <div class="text-danger" id="warning-name" >Fill this field !</div> -->
+                    </div>
+                </div>
+             </div>          
+            <div class="form-group">
+                <div class="row"> 
+                    <div class="col-sm">
+                        <label for="age"  class="required-field">Age:</label>
+                        <select name="age" id="age" class="form-control form-control-lg" required>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                        </select>
+                    </div> 
+                    <div class="col-sm pt-4 text-center">
+                            <div class="form-check-inline">
+                               <span class="required-field pr-3">Gender:</span>  
+                                <label class="form-check-label">                               
+                                <input type="radio" class="form-check-input" name="gender" required>Male</label> 
+                            </div>
+                          <div class="form-check-inline">
+                            <label class="form-check-label">
+                              <input type="radio" class="form-check-input" name="gender">Female
+                            </label>
+                          </div>
+                          <!-- <div class="text-danger" id="warning-gender" >Select your gender !</div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <h3 class="bg-primary text-white p-2 float-left mt-2">
+                        Contact details <i class="fa fa-phone" aria-hidden="true"></i>
+                    </h3>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row"> 
+                    <div class="col-sm">
+                        <label for="phone" class="required-field">Phone:</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <i class="fa fa-phone input-group-text pt-3"></i>
+                             </div>
+                           <input type="text" class="form-control form-control-lg" id="phone" 
+                           placeholder="Your phone number" minlength="10"
+                           maxlength="10" title="Required 10 digit number" 
+                           pattern="[0-9]+" required>
+                        </div>
+                           <!-- <div class="text-danger" id="warning-phone">At least 10 digits</div> -->
+                    </div>
+                    <div class="col-sm">
+                        <label for="email" class="required-field">Email:</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <i class="fa fa-envelope input-group-text pt-3"></i>
+                             </div>
+                        <input type="email" id="email" class="form-control form-control-lg" 
+                        placeholder="Your email address" required>
+                        </div>
+                        <!-- <div class="text-danger" id="warning-email">Check this field again!</div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row"> 
+                    <div class="col-sm">
+                        <label for="address" class="required-field">Address:</label>            
+                           <textarea name="address" id="address" col-sms="30" rows="5" placeholder="Your Address" 
+                           class="form-control form-control-lg" required></textarea>
+                           <!-- <div class="text-danger" id="warning-address">Fill your address !</div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <h3 class="bg-primary text-white p-2 float-left mt-2">
+                        Credentials <i class="fa fa-key" aria-hidden="true"></i>
+                    </h3>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row"> 
+                    <div class="col-sm">
+                        <label for="password" class="required-field">Password</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <i class="fa fa-key input-group-text pt-3"></i>
+                             </div>
+                           <input type="password" class="form-control form-control-lg" id="password"
+                            pattern=".{8,}" title="Minimum 8 characters"
+                            required>
+                        </div>
+                            <!-- <div class="valid-feedback">Valid password.</div> -->
+                            <div class="text-danger" id="warning-msg">Password mismatch.</div>
+                    </div>
+                    <div class="col-sm">
+                        <label for="cfpwd">Conform Password:</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <i class="fa fa-key input-group-text pt-3"></i>
+                             </div>
+                        <input type="password" id="cfpwd" class="form-control form-control-lg"  onkeyup="return check()" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row"> 
+                    <div class="col-sm">
+                        <div class="form-check-inline">
+                            <label class="form-check-label" class="required-field">
+                              <input type="checkbox" class="form-check-input" value="agree" required>
+                              I hereby agree with the terms and conditons of the company.
+                            </label>
+                          </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row text-center"> 
+                    <div class="col-sm">
+                        <button type="reset" class="btn btn-danger">RESET</button>
+                    </div>
+                    <div class="col-sm">
+                        <button type="submit" class="btn btn-primary" 
+                        id="submit">SUBMIT</button>
+                    </div>
+                </div>
+            </div>
+      </form>
+      <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Registration Status:</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+              You have registered successfully !
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+        function check(){  
+            var password=document.getElementById('password').value;
+            var cfpwd=document.getElementById('cfpwd').value;
+
+            if(password!==cfpwd || password==="" || cfpwd==="")
+            {
+                document.getElementById('warning-msg').style.display="block";
+                document.getElementById('submit').disabled=true;
+                return false;
+           }
+            else
+               {
+                document.getElementById('submit').disabled=false;
+                document.getElementById('warning-msg').style.display="none";
+                return true;
+               }
+           
+        }
+
+        function success(){
+            $('#myModal').modal('toggle');
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<html>
+   <body style="background-color:skyblue">
+   
+       <form>
+       <u>
+        <h4 Align="center">PRIME NUMBER</h4></u>
+        <table align="center">
+        <tr>
+        <td><label for="fa">Enter a Number
+        </label></td>
+        <td>
+        <input type="text" id="fa">
+        </td>
+        <td>
+        <input type="button" name="bt1" id="bt1" value="CHECK" onclick="prime();">
+        </td>
+        </tr>
+        <tr>
+        <td colspan="3">
+        <p id="ans" align="center"></p>
+        </td>
+        </table>
+        
+        
+       </form>
+       <script type="text/javascript">
+        function prime()
+        {
+         var n=document.getElementById("fa").value;
+         var fact=1;
+         if(n<=0)
+          {
+              document.getElementById("ans").innerHTML="Invalid input";
+           }
+          else
+          { 
+           for(var i= 2;i<=(n/2);++i)
+            {
+              if(n%i===0)
+              {
+              	alert("Not Prime");
+              	return(0);
+              
+              }
+             }
+             alert(n+" is Prime Number");
+          }
+          
+         //document.getElementById("ans").innerHTML="Factorial of "+n+"=" +fact;
+        }
+       </script>
+   </body>
+       

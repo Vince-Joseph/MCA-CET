@@ -1,0 +1,49 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+         body,html{
+            background: url(pgm1105.jpg) no-repeat center center fixed;
+            background-size: cover;
+             }
+            img{
+                width: 25%;
+                height: 25%;
+            }
+                           .bground{
+                            min-height: 100vh;
+                               display: flex;
+                               justify-content: center;
+                               align-items: center;
+                           }
+     </style>
+     <script>
+        var k=1; 
+        var i=1
+        function display()
+         {
+             
+            
+                    if(k===1)
+                    document.getElementById("image").src="01.png";
+                    else if(k===2)
+                    document.getElementById("image").src="02.png";
+                    else if(k===3)
+                    document.getElementById("image").src="03.png";
+                    else
+                    k=0;
+
+                    k++;            
+                    setTimeout(display,2000);
+         }
+     </script>
+ </head>
+ <body onload="display()">
+     <div class="bground">        
+     <img  alt="No image" id="image">
+    </div>
+ </body>
+ </html>

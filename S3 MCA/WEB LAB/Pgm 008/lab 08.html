@@ -1,0 +1,83 @@
+<html>
+   <body >
+   <style type="text/css">
+   
+   .block{
+   		
+   		display: block;
+   		width: 100%;
+   		border: none;
+   		background-color: #4CAF50;
+   		padding: 14px 28px;
+   		font-size: 16px;
+   		cursor: pointer;
+   		text-align: center;
+   
+   }
+   </style>
+   <center>
+       <form>
+       <u>
+        <h4 >BASIC ARITHMETIC</h4></u>
+        <table cellspacing="10px">
+        <tr>
+        <td>
+        <button onclick="get(this.id);" 
+        id="add"
+        class="block">ADD</button>
+        
+        </td>
+        
+        <td>
+        <button onclick="get(this.id);" 
+        id="sub" class="block">SUBTRACT</button>
+        </td>
+        </tr>
+        <tr>
+        <td>
+        <button onclick="get(this.id);" 
+        id="mul" class="block">MULTIPLY</button>
+        </td>
+        <td>
+        <button onclick="get(this.id);" 
+        id="div" class="block">DIVIDE</button>
+        </td>
+        </tr>
+       </form>
+       </center>
+       <script type="text/javascript">
+        function get(id)
+        {
+          	var x=prompt("First Number:");
+          	
+          	//alert(x);
+          	
+          if(x!=null){
+          	x=Number(x);
+          	var y=prompt("Second Number:");
+          	if(y!=null){
+          	y=Number(y);
+          	}
+          	else
+          		return;
+          }
+          else
+          	return;
+          	
+          switch(id)
+          {
+          
+            case "add":alert(x+y); break;
+       
+       		case "sub":alert(x-y); break;
+       		
+       		case "mul":alert(x*y); break;
+       		
+       		case "div":alert(x/y); break;
+       		}
+          	
+        //alert(x);
+          }
+       </script>
+   </body>
+       

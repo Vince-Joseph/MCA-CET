@@ -1,0 +1,89 @@
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.7vw;
+    }
+
+.default_div{
+    background-color: rgb(210, 222, 235);
+   border-top: 7px solid red;
+   border-bottom: 7px solid red;
+    box-shadow: 12px 12px 25px grey;
+    margin: 30px 7%;
+    padding: 4%;
+    
+}
+h2{
+    font-family: 'Times New Roman', Times, serif, 'Arial Narrow';
+
+}
+.about{
+    /* font-size: 3vw; */
+    color: rgb(210, 222, 235);
+    text-shadow: -1px 1px 2px red, 1px 1px 2px red,
+                            1px -1px 0 red, -1px -1px 0 red;
+
+}
+  p{
+        text-align: justify;
+    }
+.friends::first-letter {font-size: 1.5em;
+   
+  }
+.friends{
+    text-indent: 70px;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+ 
+}
+th,td{
+    text-align: justify;
+    padding: 13px 15px;
+    border-left: 3px solid rgb(238, 14, 14);
+}
+
+li{
+    padding: 7px 0px;
+}
+.color_red{
+    color:red;
+}
+
+a{
+    text-decoration: none;
+   color: green;
+}
+a:hover{
+    text-decoration: underline;
+    color:black;
+}
+img{
+    width: 100%;    
+}
+.row{
+    display: grid;
+    grid-template-columns: auto auto;
+  grid-gap: 30px;
+  padding: 10px;    
+  box-shadow:5px 5px 10px grey ;
+
+}
+.column{
+   
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+  .text{
+     
+    text-align: center;
+      padding: 1px;
+      /* box-shadow:12px 12px 25px grey ; */
+      background-color: white;
+      font-family:'Gill Sans', 'Gill Sans MT';
+      
+  }

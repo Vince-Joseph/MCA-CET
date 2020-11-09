@@ -1,0 +1,50 @@
+<html>
+   <body style="background-color:skyblue">
+   <marquee style="color:green">
+      <h2> WELCOME TO WORLD OF JAVASCRIPT</h2>
+   </marquee>
+       <form>
+        <h1 align="center"><u>My first javascript program
+        </u></h1>
+        <h4 Align="center">FACTORIAL OF A NUMBER</h4>
+        <table align="center">
+        <tr>
+        <td><label for="fa">Enter a Number
+        </label></td>
+        <td>
+        <input type="text" id="fa">
+        </td>
+        <td>
+        <input type="button" name="bt1" id="bt1" value="Find Factorial" onclick="Fact();">
+        </td>
+        </tr>
+        <tr>
+        <td colspan="3">
+        <p id="ans" align="center"></p>
+        </td>
+        </table>
+        
+        
+       </form>
+       <script type="text/javascript">
+        function Fact()
+        {
+         var n=document.getElementById("fa").value;
+         var fact=1;
+         if(n<0)
+          {
+              document.getElementById("ans").innerHTML="factorial of negative number doesn't exist";
+           }
+          else
+          { 
+           for(var i= 1;i<=n;++i)
+            {
+             fact*=i;
+             }
+          }
+          
+         document.getElementById("ans").innerHTML="Factorial of "+n+"=" +fact;
+        }
+       </script>
+   </body>
+       

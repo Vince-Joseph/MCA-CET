@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial 001</title>
+     <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    input,textarea{
+        width: 100%;
+    }
+    .left-col input{
+        background-color: black;
+        color: white;
+        border:1.2px solid rgb(27, 219, 27);
+        /* border: 1px solid white; */
+    }
+    .bg-grey{
+        background-color: lightgrey;
+    }
+    .bg-black{
+        background-color: black;
+    }
+   .warning-msg,.warning-password{
+       display: none;
+   }
+</style>
+</head>
+<body>
+    <div class="container-fluid p-5 bg-grey">
+        <form action="javascript:alert('Registered Successfully !');">
+            <div class="row shadow">
+                <div class="col-sm align-content-center bg-dark text-white pt-2 left-col">
+                    <div class="row">
+                        <h3 class="float-left bg-success text-light p-3">
+                            Application Form
+                        </h3>
+                    </div>
+                    <div class="form-group">
+                        <label for="userid">User Id</label>
+                        <input type="text" class="form-control form-control-lg" 
+                        placeholder="User Id" minlength="5" maxlength="12" id="userid" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control form-control-lg" 
+                        placeholder="Password" id="password" onkeyup="check()"
+                        pattern=".{8,12}" title="8-12 characters" required>
+                        <div class="warning-password text-danger" id="warning-password">Must be 8-12 charecters</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control form-control-lg" 
+                        placeholder="Your name" id="name" 
+                         pattern="[A-Za-z]+" title="Alphabets Only" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control form-control-lg" placeholder="Your Email" id="email" required>
+                    </div>
+                </div>
+                <div class="col-sm bg-light  pt-3">
+                    
+                    <div class="row">
+                        <div class="col-sm">
+                            <div class="form-group">
+                                <label for="age">Age:</label>
+                                <input type="number" class="form-control form-control-lg" 
+                                min="1" max="120" placeholder="Your Age" id="age" required>
+                            </div>
+                        </div>
+                        <div class="col-sm  pt-4">
+                           <span class="mr-3">Gender:</span>
+                            <div class="form-check-inline">
+                                <label class="form-check-label">
+                                  <input type="radio" class="form-check-input" name="gender" required>Male
+                                </label>
+                              </div>
+                              <div class="form-check-inline">
+                                <label class="form-check-label">
+                                  <input type="radio" class="form-check-input" name="gender">Female
+                                </label>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <textarea name="address" id="address" cols="30" rows="3" class="form-control"></textarea>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm">
+                            <label for="country">Select your country</label>
+                            <select name="country" id="country" class="form-control">
+                                <option value="India">India</option>
+                                <option value="USA">USA</option>
+                                <option value="Britain">Britain</option>
+                                <option value="Germany">Germany</option>
+                                <option value="Poland">Poland</option>
+                            </select>
+                        </div>
+                        <div class="col-sm">
+                            <label for="zip">Zip code:</label>
+                            <input type="text" class="form-control" 
+                            pattern="[0-9]+" maxlength="6" placeholder="Zip code" id="zip" required>
+                        </div>
+                    </div>
+                    <div class="row m-2" >
+                        Languages known:
+                        <div class="form-check-inline text-center">
+                            <label class="form-check-label">
+                              <input type="checkbox" class="form-check-input" 
+                              id="malayalam" value="Malayalam"
+                              onclick="check()">Malayalam
+                            </label>
+                          </div>
+                          <div class="form-check-inline text-center">
+                            <label class="form-check-label">
+                              <input type="checkbox" class="form-check-input" 
+                              id="english" value="English"
+                              onclick="check()">English
+                            </label>
+                          </div>
+                          <div class="form-check-inline text-center">
+                            <label class="form-check-label">
+                              <input type="checkbox" class="form-check-input" 
+                              id="hindi" value="Hindi"
+                              onclick="check()">Hindi
+                            </label>
+                          </div> 
+                          <div class="warning-msg text-danger" id="warning-msg">Select known languages.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="about">About:</label>
+                        <textarea name="about" id="about" cols="30" rows="3" class="form-control"></textarea>
+                    </div>
+                </div>
+                <div class="col-sm-12 text-center">
+                        <div class="row">
+                            <div class="col-sm  bg-dark text-light pb-3">
+                                <button type="reset" class="btn btn-danger">RESET</button>
+    
+                            </div>
+                            <div class="col-sm bg-light pb-3">
+                            <button type="submit" id="submit" class="btn btn-primary" onmouseover="check()">SUBMIT</button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        function check(){
+            
+            var x=document.getElementById('english');
+        var y=document.getElementById('malayalam');
+        var z=document.getElementById('hindi');
+
+        var password=document.getElementById('password');
+        
+        if(password.value.length<8 || password.value.length>12)
+        {         
+            document.getElementById('warning-password').style.display="block";
+            document.getElementById('submit').disabled=true;
+        }
+        else  
+        {     
+            document.getElementById('warning-password').style.display="none";
+
+            if(!(x.checked || y.checked || z.checked))
+            {
+                document.getElementById('warning-msg').style.display="block";
+                document.getElementById('submit').disabled=true;
+            }
+            else{
+                    document.getElementById('warning-msg').style.display="none";
+                    document.getElementById('submit').disabled=false;
+              }
+        } 
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+@media only screen and (max-width:720px){
+    div.gallery{
+        width: 100%;
+    }
+}
+.container{
+    padding: 10px 5px;
+    margin: 30px 7%;
+    box-shadow: 2px 2px 20px grey;
+    border: 1px solid black;
+}
+.gallery {
+    margin: 5px;
+    float: left;
+    width: 49%;
+    box-sizing: border-box;
+    overflow: hidden;
+    box-shadow: 2px 2px 10px grey;
+
+  }
+  img {
+    width: 100%;
+  }
+  .marquee{
+    background-color: dodgerblue;
+   font-size: 2em;
+   color: white;
+}
+li{
+    padding: 5px;
+    text-align: left;
+}
+.center{
+    align-items: center;
+    text-align: center;
+    font-size: 1.3em;
+}
+.heading{
+    background-color: rgb(19, 236, 12);
+    height: 20%;
+}
+.row{
+    display: flex; 
+    flex-wrap: wrap;
+}
