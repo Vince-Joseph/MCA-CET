@@ -1,0 +1,11 @@
+#!/bin/bash
+read -p "Enter a number:" number
+rev=0
+temp=$number
+
+while [ $temp -ne 0 ] 
+do
+    rev=`expr $rev \* 10 + $temp % 10`
+    temp=`expr $temp / 10` 
+done
+echo "Reverse of $number is $rev"

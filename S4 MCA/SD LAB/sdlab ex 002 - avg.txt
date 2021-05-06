@@ -1,0 +1,13 @@
+#!/bin/bash
+read -p "Enter number of elements: " count
+a=1
+sum=0
+
+while [ $a -le $count ] 
+do
+    read -p "Enter number $a:" n
+   sum=`expr $sum + $n`
+   a=`expr $a + 1`
+done
+avg=`expr $sum / $count`
+echo "Avergae of given $count numbers: $avg"

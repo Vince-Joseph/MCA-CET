@@ -1,0 +1,13 @@
+read -p "Enter limit: " limit
+n1=0
+n2=1
+i=2
+echo -e "\n\t$n1\n\t$n2"
+while [ $i -le $limit ]
+do
+    n3=`expr $n1 + $n2`
+    echo -e "\t$n3"
+    n1=$n2
+    n2=$n3
+    i=`expr $i + 1`
+done

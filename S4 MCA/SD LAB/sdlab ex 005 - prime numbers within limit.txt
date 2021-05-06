@@ -1,0 +1,29 @@
+read -p "Enter limit: " limit
+
+i=2
+
+while [ $i -le $limit ]
+do
+    j=2
+    flag=1
+    temp=`expr $i / 2`
+    
+    while [ $j -le $temp ]
+    do
+        rem=`expr $i % $j`
+        
+        if [ $rem -eq 0 ] 
+        then
+            flag=0
+            break
+        fi
+        j=`expr $j + 1`
+    done
+    
+    if [ $flag -eq 1 ]
+    then
+        echo $i
+    fi
+    i=`expr $i + 1`
+    
+done
