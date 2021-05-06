@@ -1,0 +1,80 @@
+.main
+{
+    padding:5px 10px;
+    margin: 0 20px;
+}
+/* *
+{
+    border:1px solid black;
+} */
+
+.input-control
+{
+    height: 30px;
+    margin: 5px 20px;
+    width: 30%; 
+    border-radius: 3px; 
+    border: 1px solid rgb(145, 142, 142);  
+}
+.input-control-textarea
+{
+    margin: 5px 20px;
+    width: 30%;    
+}
+.btn
+{
+    height: 30px;
+    margin: 5px 20px;
+    border:none;
+    
+}
+.btn-primary
+{
+    background-color: cornflowerblue;
+    color: white;
+    font-size: 14px;
+    
+}
+.btn-success
+{
+    background-color: rgb(108, 202, 13);
+    color: white;
+    font-size: 14px;
+}
+.btn-danger
+{
+    background-color: crimson;
+    color:white;
+    font-size: 14px;
+}
+.text-danger
+{
+    color: red;
+}
+.text-success
+{
+    color: green;
+}
+.text-primary
+{
+    color:cornflowerblue;
+}
+.form-control
+{
+    display: block;
+}
+.shadow
+{
+    box-shadow: 1px 1px 20px 1px grey;
+    padding:20px 40px;
+}
+.center
+{
+    margin: 10% 20%;
+    /* align-items: center; */
+}
+   
+.text-center
+{
+    text-align: center;
+}
