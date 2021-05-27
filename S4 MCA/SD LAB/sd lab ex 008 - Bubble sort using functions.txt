@@ -1,0 +1,42 @@
+#!/bin/bash
+# since we are using global arrays, it's not required to return array values
+acceptNumbers() # function to accept list of numbers from user
+{
+    i=0
+    while [ $i -lt $1 ]
+    do
+        read -p "Enter number `expr $i + 1 `: " list[$i]
+        i=`expr $i + 1`
+    done
+}
+sortNumbers() # bubble sort function
+{
+    i=`expr $1 - 1` #getting list length
+    while [ $i -gt 0 ]
+    do
+     j=0
+     while [ $j -lt $i ]
+     do
+        if [ ${list[$j]} -gt ${list[`expr $j + 1`]} ]
+        then
+            temp=${list[$j]}
+            list[$j]=${list[`expr $j + 1`]]}
+            list[`expr $j + 1`]=$temp
+        fi
+        j=`expr $j + 1`
+     done
+     i=`expr $i - 1`
+    done
+}
+
+#---------- Main program -----------------
+read -p "Enter number of list elements: " count
+
+acceptNumbers $count
+#list=$? #return value of function
+
+sortNumbers $count
+#list=$? #return value of function
+
+echo "List after sorting is : ${list[*]}"
+

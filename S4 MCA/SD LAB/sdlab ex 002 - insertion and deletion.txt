@@ -1,0 +1,57 @@
+#!/bin/bash
+
+number_array=(5, 6, 7, 8, 9, 10) # predefined array
+arrLen=${#number_array[*]} #find length of array
+
+read -p "Enter two elements to insert into the array: " n1 n2
+read -p "Enter position of insertions: " p1 p2
+
+p1=`expr $p1 - 1`
+p2=`expr $p2 - 1`
+i=0
+
+# inserting first number
+i=$arrLen
+while [ $i -ge $p1 ]
+do
+    number_array[`expr $i + 1`]=${number_array[$i]}
+    i=`expr $i - 1`
+done
+number_array[$p1]=$n1
+echo "After first number insertion: ${number_array[*]}"
+
+# inserting second number
+i=$arrLen
+while [ $i -ge $p2 ]
+do
+    number_array[`expr $i + 1`]=${number_array[$i]}
+    i=`expr $i - 1`
+done
+number_array[$p2]=$n2
+
+echo "After second number insertion: ${number_array[*]}"
+
+read -p "Enter positions from where two numbers have to be deleted: " p1 p2
+
+
+p1=`expr $p1 - 1`
+p2=`expr $p2 - 1`
+
+# deleting first number 
+i=$p1
+while [ $i -lt $arrLen ]
+do
+    number_array[$i]=${number_array[`expr $i + 1`]}
+    i=`expr $i + 1`
+done
+echo "After deleting number from `expr $p1 + 1`th position: ${number_array[*]}"
+
+# deleting second number 
+i=$p2
+while [ $i -lt $arrLen ]
+do
+    number_array[$i]=${number_array[`expr $i + 1`]}
+    i=`expr $i + 1`
+done
+echo "After deleting number from `expr $p2 + 1`-th position: ${number_array[*]}"
+
